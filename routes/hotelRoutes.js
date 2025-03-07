@@ -3,13 +3,12 @@ const hotelController = require('../controllers/hotelController.js');
 
 const router = express.Router();
 
-router.param('id', hotelController.checkId);
 router
 
 router
     .route('/')
     .get(hotelController.getAllHotels)
-    .post(hotelController.checkBody, hotelController.createHotel);
+    .post(hotelController.createHotel);
 
 router
     .route('/:id')
